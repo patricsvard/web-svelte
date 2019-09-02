@@ -41,5 +41,5 @@
   bind:this={self}
   on:click={onClick}
   class="mdc-button {classes(true)}">
-  Hi!
+  {text}
 </button>
