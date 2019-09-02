@@ -1,18 +1,26 @@
-const path = require('path');
+const path = require("path");
+const sveltePreprocess = require("svelte-preprocess");
 
-// Export a function. Accept the base config as the only param.
-module.exports = async ({ config, mode }) => {
-  // `mode` has a value of 'DEVELOPMENT' or 'PRODUCTION'
-  // You can change the configuration based on that.
-  // 'PRODUCTION' is used when building the static version of storybook.
+module.exports = async ({ config }) => {
+  config.resolve.mainFields = ["svelte", "module", "browser", "main"];
+  const svelteConfig = config.module.rules.find(r =>
+    /svelte\-loader/.test(r.loader)
+  );
 
-  // Make whatever fine-grained changes you need
-  config.module.rules.push({
-    test: /\.scss$/,
-    use: ['style-loader', 'css-loader', 'sass-loader'],
-    include: path.resolve(__dirname, '../')
-  });
+  svelteConfig.options = {
+    preprocess: sveltePreprocess({
+      onBefore({ content, filename }) {
+        content = content.replace("../../scss", "../assets/scss");
+        return content;
+      },
+      preserve: ["ld+json"],
+      transformers: {
+        scss: {
+          includePaths: [path.resolve(__dirname, "../node_modules")]
+        }
+      }
+    })
+  };
 
-  // Return the altered config
   return config;
 };
