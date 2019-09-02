@@ -33,6 +33,7 @@
 </script>
 
 <style type="text/scss">
+  @import "./theme.scss";
   @import "@material/button/mdc-button.scss";
 </style>
 

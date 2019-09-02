@@ -16,7 +16,10 @@ module.exports = async ({ config }) => {
       preserve: ["ld+json"],
       transformers: {
         scss: {
-          includePaths: [path.resolve(__dirname, "../node_modules")]
+          includePaths: [
+            path.resolve(__dirname, "../node_modules"),
+            path.resolve(__dirname, "../src")
+          ]
         }
       }
     })
