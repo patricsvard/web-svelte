@@ -1,29 +1,34 @@
-import { storiesOf } from "@storybook/svelte";
-import { action } from "@storybook/addon-actions";
+import { storiesOf } from '@storybook/svelte';
+import { action } from '@storybook/addon-actions';
 
-import Button from "../src/button.svelte";
-import Foo from "../src/foo.svelte";
-import TopBar from "../src/topBar.svelte";
+import Button from '../src/button';
+import TopBar from '../src/shared_components/topBar';
+import TopBarView from './components/topBarView';
 
-storiesOf("Button", module)
-  .add("with text", () => ({
+storiesOf('Button', module)
+  .add('with text', () => ({
     Component: Button,
-    props: { text: "Hello Button" },
-    on: { click: action("clicked") }
+    props: { text: 'Hello Button' },
+    on: { click: action('clicked') }
   }))
-  .add("with some emoji", () => ({
+  .add('with some emoji', () => ({
     Component: Button,
     props: {
-      text: "😀 😎 👍 💯"
+      text: '😀 😎 👍 💯'
     },
-    on: { click: action("clicked") }
+    on: { click: action('clicked') }
   }));
 
-storiesOf("Foo", module).add("foo", () => ({
-  Component: Foo,
-  options: { panelPosition: "right" }
-}));
-
-storiesOf("TopBar", module).add("TopBar", () => ({
-  Component: TopBar
-}));
+storiesOf('TopBar', module)
+  .add('TopBar', () => ({
+    Component: TopBar,
+    props: {
+      title: 'Top Bar Component'
+    }
+  }))
+  .add('Top Bar with menu', () => ({
+    Component: TopBarView,
+    props: {
+      title: 'Top Bar Component'
+    }
+  }));
