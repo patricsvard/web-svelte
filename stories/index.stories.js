@@ -3,9 +3,11 @@ import { action } from "@storybook/addon-actions";
 
 import Button from "../src/button";
 import TopBar from "../src/shared_components/topBar";
-import TopBarView from "./components/topBarView";
+import TopBarView from "./components/topBarView.svelte";
 
 import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
+
+import "./styles.css";
 
 storiesOf("Button", module)
   .add("with text", () => ({
@@ -27,16 +29,27 @@ const stories = storiesOf("TopBar", module);
 // You can also configure `withKnobs` as a global decorator.
 stories.addDecorator(withKnobs);
 
+import topBarViewNotes from "./components/topBarView.md";
+import topBarViewWithMenu from "./components/topBarViewWithMenu.md";
+
 stories
-  .add("TopBar", () => ({
-    Component: TopBar,
-    props: {
-      title: text("Title", "Top Bar Component")
-    }
-  }))
-  .add("Top Bar with menu", () => ({
-    Component: TopBarView,
-    props: {
-      title: text("Title", "Top Bar Component")
-    }
-  }));
+  .add(
+    "TopBar",
+    () => ({
+      Component: TopBar,
+      props: {
+        title: text("Title", "Top Bar Component")
+      }
+    }),
+    { notes: { markdown: topBarViewNotes } }
+  )
+  .add(
+    "Top Bar with menu",
+    () => ({
+      Component: TopBarView,
+      props: {
+        title: text("Title", "Top Bar Component")
+      }
+    }),
+    { notes: { markdown: topBarViewWithMenu } }
+  );
