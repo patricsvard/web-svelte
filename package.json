@@ -3,17 +3,24 @@
   "version": "1.0.0",
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/preset-env": "7.7.1",
     "@storybook/addon-actions": "^5.2.6",
     "@storybook/addon-knobs": "^5.2.6",
     "@storybook/addon-links": "^5.2.6",
     "@storybook/addon-notes": "^5.2.6",
+    "@storybook/addon-storyshots": "^5.2.6",
     "@storybook/addon-storysource": "^5.2.6",
     "@storybook/addon-viewport": "^5.2.6",
     "@storybook/addons": "^5.2.6",
     "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/svelte": "^5.2.6",
+    "@types/jest": "^24.0.23",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "24.9.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-require-context-hook": "^1.0.0",
     "eslint-plugin-svelte3": "^2.7.3",
+    "jest-transform-stub": "^2.0.0",
     "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
     "rollup": "^1.12.0",
@@ -28,8 +35,12 @@
     "svelte-preprocess": "^3.0.2"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/svelte": "^1.9.0",
+    "jest-transform-svelte": "^2.1.0",
     "material-components-web": "^3.1.1",
     "material-icons": "^0.3.1",
+    "rollup-plugin-babel": "^4.3.3",
     "sirv-cli": "^0.4.4"
   },
   "scripts": {
@@ -40,6 +51,20 @@
     "start:dev": "sirv public --single --dev",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "test": "jest src",
+    "test:watch": "npm run test -- --watch"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "require-context-hook"
+        ]
+      }
+    }
   }
 }
