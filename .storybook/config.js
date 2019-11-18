@@ -10,6 +10,5 @@ configure(
 addParameters({
   options: {
     theme: themes.dark
-  },
-  viewport: { viewports: newViewports }
+  }
 });
