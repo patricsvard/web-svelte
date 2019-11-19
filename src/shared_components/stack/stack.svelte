@@ -6,7 +6,6 @@
   .container {
     display: flex;
     flex-direction: row;
-
     @media (max-width: 420px) {
       flex-direction: column;
     }
@@ -16,7 +15,7 @@
       flex: 1 0 50%;
     }
     height: 50px;
-    background-color: red;
+    outline: solid 1px #000;
   }
   .child-bottom {
     @media (min-width: 421px) {
@@ -24,7 +23,7 @@
       flex: 0 0 50%;
     }
     height: 50px;
-    background-color: blue;
+    outline: solid 1px #000;
   }
 </style>
 
