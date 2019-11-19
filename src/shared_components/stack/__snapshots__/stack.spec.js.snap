@@ -24,7 +24,7 @@ Stack {
       [Function],
     ],
     "on_mount": Array [],
-    "props": Object {},
+    "props": Array [],
     "update": [Function],
   },
 }
