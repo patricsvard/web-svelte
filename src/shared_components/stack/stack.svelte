@@ -28,6 +28,6 @@
 </style>
 
 <div class="container">
-  <div class="child-top" />
-  <div class="child-bottom" />
+  <div class="child-top">Top/Left</div>
+  <div class="child-bottom">Bottom/Right</div>
 </div>

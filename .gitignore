@@ -2,3 +2,5 @@
 node_modules
 public/bundle.*
 storybook-static
+yarn.lock
+yarn-error.log
