@@ -1,5 +1,9 @@
 describe("Storybook", () => {
+  before(() => {
+    cy.visit("/");
+  });
+
   it("should run test", () => {
-    expect(true).to.be.equal(true);
+    cy.get("#storybook-preview-iframe").should("exist");
   });
 });

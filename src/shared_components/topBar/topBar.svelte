@@ -1,8 +1,9 @@
 <script>
+  /* to prevent unused css add global to style tag */
   export let title;
 </script>
 
-<style type="text/scss">
+<style type="text/scss" global>
   @import "./theme.scss";
   @import "@material/top-app-bar/mdc-top-app-bar";
 </style>

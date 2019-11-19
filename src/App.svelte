@@ -1,6 +1,6 @@
 <script>
   import Stack from "./shared_components/stack/stack.svelte";
-  export let name;
+  import TopBar from "./shared_components/topBar/topBar.svelte";
 </script>
 
 <style type="text/scss">
@@ -68,6 +68,7 @@
       <div class="content-col">
         <div class="faked-content">
           <Stack />
+          <TopBar />
         </div>
         <div class="faked-bar" />
         <div class="faked-bar" />
