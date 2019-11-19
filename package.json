@@ -19,6 +19,7 @@
     "babel-jest": "24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-require-context-hook": "^1.0.0",
+    "concurrently": "^5.0.0",
     "cypress": "^3.6.1",
     "eslint-plugin-svelte3": "^2.7.3",
     "jest-transform-stub": "^2.0.0",
@@ -33,7 +34,8 @@
     "sass-loader": "^8.0.0",
     "svelte": "^3.9.1",
     "svelte-loader": "^2.13.6",
-    "svelte-preprocess": "^3.0.2"
+    "svelte-preprocess": "^3.0.2",
+    "wait-on": "^3.3.0"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -53,9 +55,11 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
-    "test": "jest src",
     "test:watch": "npm run test -- --watch",
-    "test:cypress": "./node_modules/.bin/cypress open"
+    "test": "jest src && concurrently 'npm run storybook' 'npm run cypress:test' -k -s first",
+    "cypress:test": "wait-on http://localhost:6006 && cypress run",
+    "cypress:run": "./node_modules/.bin/cypress run",
+    "cypress:open": "./node_modules/.bin/cypress open"
   },
   "babel": {
     "presets": [
