@@ -28,13 +28,11 @@ TopBar {
       [Function],
     ],
     "on_mount": Array [],
-    "props": Object {
-      "title": 0,
-    },
+    "props": Array [
+      "title",
+    ],
     "update": [Function],
   },
-  "$capture_state": [Function],
-  "$inject_state": [Function],
   "$set": [Function],
 }
 `;

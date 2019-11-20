@@ -8,6 +8,7 @@
     "@storybook/addon-knobs": "^5.2.6",
     "@storybook/addon-links": "^5.2.6",
     "@storybook/addon-notes": "^5.2.6",
+    "@storybook/addon-options": "^5.2.6",
     "@storybook/addon-storyshots": "^5.2.6",
     "@storybook/addon-storysource": "^5.2.6",
     "@storybook/addon-viewport": "^5.2.6",
@@ -56,7 +57,7 @@
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
     "test:watch": "npm run test -- --watch",
-    "test": "jest src && concurrently 'npm run storybook' 'npm run cypress:test' -k -s first",
+    "test": "jest src && concurrently \"npm run storybook\" \"npm run cypress:test\" -k -s first",
     "cypress:test": "wait-on http://localhost:6006 && cypress run",
     "cypress:run": "./node_modules/.bin/cypress run",
     "cypress:open": "./node_modules/.bin/cypress open"

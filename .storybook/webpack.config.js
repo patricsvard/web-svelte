@@ -10,10 +10,6 @@ module.exports = async ({ config }) => {
 
   svelteConfig.options = {
     preprocess: sveltePreprocess({
-      onBefore({ content, filename }) {
-        content = content.replace("../../scss", "../assets/scss");
-        return content;
-      },
       preserve: ["ld+json"],
       transformers: {
         scss: {
