@@ -1,6 +1,4 @@
-import { action } from "@storybook/addon-actions";
 import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
-import { addParameters } from "@storybook/svelte";
 import TopBar from "./topBar.svelte";
 import Notes from "./topBar.md";
 
