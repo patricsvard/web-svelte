@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stack component 1`] = `
+TopBar {
+  "$$": Object {
+    "after_update": Array [],
+    "before_update": Array [],
+    "bound": Object {},
+    "callbacks": Object {},
+    "context": Map {},
+    "ctx": Object {
+      "$$scope": undefined,
+      "$$slots": Object {},
+      "title": "Orange",
+    },
+    "dirty": null,
+    "fragment": Object {
+      "c": [Function],
+      "d": [Function],
+      "i": [Function],
+      "l": [Function],
+      "m": [Function],
+      "o": [Function],
+      "p": [Function],
+    },
+    "not_equal": [Function],
+    "on_destroy": Array [
+      [Function],
+    ],
+    "on_mount": Array [],
+    "props": Array [
+      "title",
+    ],
+    "update": [Function],
+  },
+  "$set": [Function],
+}
+`;
+
+exports[`Storyshots Stack Advanced 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <div
+    class="container"
+  >
+    <div
+      class="child-top"
+    >
+      Top/Left
+    </div>
+     
+    <div
+      class="child-bottom"
+    >
+      Bottom/Right
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Stack Basic 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <div
+    class="container"
+  >
+    <div
+      class="child-top"
+    >
+      Top/Left
+    </div>
+     
+    <div
+      class="child-bottom"
+    >
+      Bottom/Right
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Storyshots TopBar Advanced 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <header
+    class="mdc-top-app-bar"
+  >
+    <div
+      class="mdc-top-app-bar__row"
+    >
+      <section
+        class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+      >
+         
+        <span
+          class="mdc-top-app-bar__title"
+        >
+          Top bar component
+        </span>
+      </section>
+    </div>
+  </header>
+</section>
+`;
+
+exports[`Storyshots TopBar Basic 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <header
+    class="mdc-top-app-bar"
+  >
+    <div
+      class="mdc-top-app-bar__row"
+    >
+      <section
+        class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+      >
+         
+        <span
+          class="mdc-top-app-bar__title"
+        >
+          Top bar component
+        </span>
+      </section>
+    </div>
+  </header>
+</section>
+`;
