@@ -4,7 +4,6 @@
 </script>
 
 <style type="text/scss" global>
-  @import "./theme.scss";
   @import "@material/top-app-bar/mdc-top-app-bar";
 
   .container {
